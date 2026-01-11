@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "whitelist": [
+    "com.android.dialer",
+    "com.android.contacts",
+    "com.sec.android.app.sbrowser",
+    "com.google.android.youtube"
+  ],
+  "appLimits": [
+    {
+      "pkg": "com.google.android.youtube",
+      "limitMin": 30
+    },
+    {
+      "pkg": "com.kakao.talk",
+      "limitMin": 20
+    }
+  ],
+  "appTimeWindows": [
+    {
+      "pkg": "com.google.android.youtube",
+      "windows": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "start": "22:00",
+          "end": "06:30"
+        },
+        {
+          "days": [
+            6,
+            7
+          ],
+          "start": "23:00",
+          "end": "08:00"
+        }
+      ]
+    },
+    {
+      "pkg": "com.kakao.talk",
+      "windows": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "start": "23:30",
+          "end": "06:00"
+        }
+      ]
+    }
+  ]
+}
