@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>개인정보처리방침 | DetoxLock</title>
+  <meta name="description" content="DetoxLock(디톡스락) 개인정보처리방침" />
+  <style>
+    :root{
+      --bg:#0b1020;
+      --card:#111a33;
+      --card2:#0f1730;
+      --text:#eaf0ff;
+      --muted:#b7c2e2;
+      --accent:#7aa2ff;
+      --accent2:#9bffd5;
+      --border:rgba(255,255,255,.10);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius:18px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", Arial, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      color:var(--text);
+      background:
+        radial-gradient(1200px 800px at 20% 10%, rgba(122,162,255,.22), transparent 60%),
+        radial-gradient(900px 700px at 80% 20%, rgba(155,255,213,.14), transparent 60%),
+        linear-gradient(180deg, #070b16, var(--bg));
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:980px; margin:0 auto; padding:32px 18px 60px}
+    header{
+      display:flex; gap:16px; align-items:flex-start; justify-content:space-between;
+      padding:22px 22px;
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    header:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(600px 160px at 10% 20%, rgba(122,162,255,.25), transparent 70%),
+                  radial-gradient(600px 160px at 90% 40%, rgba(155,255,213,.18), transparent 70%);
+      pointer-events:none;
+      filter:blur(6px);
+    }
+    .hgroup{position:relative}
+    .badge{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(122,162,255,.12);
+      border:1px solid rgba(122,162,255,.25);
+      color:var(--muted);
+      font-size:13px;
+    }
+    h1{margin:10px 0 6px; font-size:28px; letter-spacing:-.2px}
+    .sub{margin:0; color:var(--muted); line-height:1.6}
+    .meta{
+      position:relative;
+      display:flex; flex-direction:column; gap:10px;
+      min-width:260px; max-width:340px;
+      padding:14px 14px;
+      background:rgba(17,26,51,.55);
+      border:1px solid var(--border);
+      border-radius:14px;
+      backdrop-filter: blur(8px);
+    }
+    .meta .row{display:flex; justify-content:space-between; gap:12px; font-size:13px; color:var(--muted)}
+    .meta .row strong{color:var(--text); font-weight:600}
+    nav{
+      margin:18px 0 0;
+      padding:16px 18px;
+      border-radius:var(--radius);
+      border:1px solid var(--border);
+      background:rgba(17,26,51,.38);
+      box-shadow:0 6px 18px rgba(0,0,0,.22);
+    }
+    nav .title{font-size:14px; color:var(--muted); margin:0 0 10px}
+    .toc{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:8px 14px;
+      margin:0; padding:0;
+      list-style:none;
+    }
+    .toc a{
+      display:block;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(15,23,48,.55);
+      color:var(--text);
+      font-size:14px;
+    }
+    .toc a:hover{border-color:rgba(122,162,255,.35); background:rgba(122,162,255,.10)}
+    section{
+      margin-top:18px;
+      padding:20px 22px;
+      border-radius:var(--radius);
+      border:1px solid var(--border);
+      background:linear-gradient(180deg, rgba(17,26,51,.52), rgba(15,23,48,.40));
+      box-shadow:0 6px 18px rgba(0,0,0,.18);
+    }
+    section h2{
+      margin:0 0 12px;
+      font-size:18px;
+      letter-spacing:-.1px;
+    }
+    section p, section li{
+      color:var(--muted);
+      line-height:1.75;
+      font-size:14.5px;
+    }
+    .note{
+      margin:12px 0 0;
+      padding:12px 14px;
+      border-radius:14px;
+      background:rgba(155,255,213,.08);
+      border:1px solid rgba(155,255,213,.20);
+      color:var(--muted);
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:14px;
+    }
+    .box{
+      padding:14px 14px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(15,23,48,.55);
+    }
+    table{
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0;
+      overflow:hidden;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(15,23,48,.55);
+      margin-top:10px;
+    }
+    th, td{
+      padding:12px 12px;
+      text-align:left;
+      font-size:14px;
+      color:var(--muted);
+      border-bottom:1px solid rgba(255,255,255,.08);
+      vertical-align:top;
+    }
+    th{
+      color:var(--text);
+      font-weight:650;
+      background:rgba(255,255,255,.04);
+    }
+    tr:last-child td{border-bottom:none}
+    code{
+      font-family:var(--mono);
+      font-size:13px;
+      color:var(--text);
+      background:rgba(255,255,255,.06);
+      padding:2px 6px;
+      border-radius:8px;
+      border:1px solid rgba(255,255,255,.10);
+    }
+    footer{
+      margin-top:18px;
+      padding:18px 22px;
+      border-radius:var(--radius);
+      border:1px solid var(--border);
+      background:rgba(17,26,51,.35);
+      color:var(--muted);
+      font-size:13.5px;
+    }
+    .pill{
+      display:inline-block;
+      padding:2px 8px;
+      border-radius:999px;
+      background:rgba(122,162,255,.10);
+      border:1px solid rgba(122,162,255,.22);
+      color:var(--text);
+      font-size:12px;
+    }
+    @media (max-width: 760px){
+      header{flex-direction:column}
+      .meta{min-width:auto; width:100%}
+      .toc{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+  <!--
+    수정할 값(필수):
+    - 앱명(APP_NAME) / 개발자(OWNER) / 문의 이메일(CONTACT_EMAIL) / 시행일(EFFECTIVE_DATE)
+  -->
+  <div class="wrap">
+    <header>
+      <div class="hgroup">
+        <div class="badge">
+          <span class="pill">Policy</span>
+          <span>개인정보처리방침</span>
+        </div>
+        <h1>DetoxLock 개인정보처리방침</h1>
+        <p class="sub">
+          본 개인정보처리방침은 <strong>DetoxLock(디톡스락)</strong> 앱 서비스 이용과 관련하여,
+          이용자의 개인정보를 어떻게 수집·이용·보관·파기하는지 안내합니다.
+        </p>
+      </div>
+
+      <div class="meta" aria-label="문서 메타 정보">
+        <div class="row"><span>서비스명</span><strong>DetoxLock</strong></div>
+        <div class="row"><span>운영자</span><strong>Siustudio</strong></div>
+        <div class="row"><span>문의</span><strong><a href="mailto:support@siustudio.me">support@siustudio.me</a></strong></div>
+        <div class="row"><span>시행일</span><strong>2026-01-24</strong></div>
+        <div class="row"><span>최종 업데이트</span><strong>2026-01-24</strong></div>
+      </div>
+    </header>
+
+    <nav>
+      <p class="title">목차</p>
+      <ul class="toc">
+        <li><a href="#s1">1. 수집하는 개인정보 항목</a></li>
+        <li><a href="#s2">2. 개인정보의 이용 목적</a></li>
+        <li><a href="#s3">3. 접근성 서비스(Accessibility) 사용 안내</a></li>
+        <li><a href="#s4">4. 앱 목록/패키지 정보 처리</a></li>
+        <li><a href="#s5">5. 개인정보 보관 및 파기</a></li>
+        <li><a href="#s6">6. 제3자 제공 및 처리위탁</a></li>
+        <li><a href="#s7">7. 이용자의 권리 및 행사 방법</a></li>
+        <li><a href="#s8">8. 아동의 개인정보</a></li>
+        <li><a href="#s9">9. 보안 조치</a></li>
+        <li><a href="#s10">10. 문의처 및 고지 의무</a></li>
+      </ul>
+    </nav>
+
+    <section id="s1">
+      <h2>1. 수집하는 개인정보 항목</h2>
+      <p>
+        DetoxLock은 서비스 제공을 위해 필요한 최소한의 정보만을 처리합니다.
+        아래 항목은 기능 사용 여부 및 기기 환경에 따라 달라질 수 있습니다.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th style="width:30%">구분</th>
+            <th style="width:35%">처리 항목</th>
+            <th>비고</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>PIN(잠금 해제) 정보</td>
+            <td>PIN 자체가 아닌 <strong>암호화/해시 형태</strong>의 값</td>
+            <td>PIN 인증을 위해 기기 내 저장. 예: 해시(BCrypt 등) 형태로 보관</td>
+          </tr>
+          <tr>
+            <td>잠금/차단 동작을 위한 정보</td>
+            <td>현재 전면(포그라운드) 앱의 패키지명, 이벤트 타임스탬프</td>
+            <td>차단 대상 앱 감지 및 잠금 화면 표시를 위해 사용</td>
+          </tr>
+          <tr>
+            <td>앱 설정 정보</td>
+            <td>차단/허용 목록, 잠금 상태, 앱 설정값</td>
+            <td>기기 내 로컬 저장(기본)</td>
+          </tr>
+          <tr>
+            <td>기기/앱 정보(선택)</td>
+            <td>OS 버전, 기기 모델, 앱 버전, 오류 로그</td>
+            <td>오류 분석 및 품질 개선 목적(선택적으로 수집될 수 있음)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="note">
+        <strong>중요:</strong> DetoxLock은 원칙적으로 접근성 기능을 통해 이용자의 키 입력 내용(비밀번호/메시지 등) 또는 화면의 민감한 텍스트를 수집·저장·전송하지 않습니다.
+        다만, 특정 시스템 화면을 식별하기 위해 버튼/라벨 등 “화면 구성 요소”를 제한적으로 참조할 수 있으며, 이 정보는 기기 내에서만 즉시 처리됩니다.
+      </div>
+    </section>
+
+    <section id="s2">
+      <h2>2. 개인정보의 이용 목적</h2>
+      <ul>
+        <li>차단 대상 앱 실행 감지 및 잠금(차단) 화면 표시</li>
+        <li>PIN 확인을 통한 잠금 해제 및 설정 보호</li>
+        <li>사용자 설정(차단/허용 목록 등) 저장 및 서비스 제공</li>
+        <li>(선택) 오류 분석 및 서비스 품질 개선</li>
+      </ul>
+    </section>
+
+    <section id="s3">
+      <h2>3. 접근성 서비스(Accessibility) 사용 안내</h2>
+      <p>
+        DetoxLock은 사용자가 설정에서 접근성 서비스를 활성화한 경우,
+        앱 실행 상황을 인지하여 차단 정책을 적용하기 위해 접근성 API를 사용할 수 있습니다.
+      </p>
+
+      <div class="grid">
+        <div class="box">
+          <p><strong style="color:var(--text)">사용 목적</strong></p>
+          <ul>
+            <li>전면에서 실행 중인 앱을 감지</li>
+            <li>차단 대상 앱 실행 시 즉시 잠금(차단) 화면으로 전환</li>
+            <li>일부 시스템 화면(예: 설치/권한 관련 화면) 진입 시 차단 정책 적용</li>
+          </ul>
+        </div>
+        <div class="box">
+          <p><strong style="color:var(--text)">처리 범위</strong></p>
+          <ul>
+            <li>필요 최소 범위의 이벤트(포그라운드 앱 식별 등)만 활용</li>
+            <li>키 입력 내용(메시지/비밀번호) 수집·전송 없음</li>
+            <li>접근성으로 얻은 정보는 원칙적으로 기기 내에서만 처리</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="note">
+        접근성 서비스는 사용자가 언제든지 <code>설정 &gt; 접근성 &gt; 설치된 서비스</code>에서 비활성화할 수 있습니다.
+      </p>
+    </section>
+
+    <section id="s4">
+      <h2>4. 앱 목록/패키지 정보 처리</h2>
+      <p>
+        DetoxLock은 사용자가 차단/허용 대상을 선택할 수 있도록 “사용자가 실행 가능한 앱(런처 앱)” 목록을 표시할 수 있습니다.
+        이 과정에서 앱 목록 정보는 기본적으로 기기 내에서만 처리됩니다.
+      </p>
+      <ul>
+        <li>앱 목록은 일반적으로 <code>MAIN/LAUNCHER</code> 인텐트를 기준으로 조회됩니다.</li>
+        <li>특정 시스템 동작(예: 앱 설치 화면 등)은 접근성 이벤트의 패키지명 기반으로 감지할 수 있습니다.</li>
+      </ul>
+      <div class="note">
+        <strong>제3자 전송:</strong> 앱 목록 정보는 원칙적으로 외부 서버로 전송하지 않습니다.
+        (단, 사용자가 동기화/백업 기능을 명시적으로 사용하도록 구현한 경우에는 별도 고지합니다.)
+      </div>
+    </section>
+
+    <section id="s5">
+      <h2>5. 개인정보 보관 및 파기</h2>
+      <ul>
+        <li>PIN 해시 및 앱 설정 정보는 서비스 제공을 위해 <strong>기기 내 로컬 저장</strong>될 수 있습니다.</li>
+        <li>이용자가 앱을 삭제(언인스톨)하면, 앱이 보관하던 정보는 운영체제 정책에 따라 삭제됩니다.</li>
+        <li>앱 내 “데이터 초기화/설정 초기화” 기능이 있는 경우, 해당 기능으로 로컬 데이터를 삭제할 수 있습니다.</li>
+      </ul>
+    </section>
+
+    <section id="s6">
+      <h2>6. 제3자 제공 및 처리위탁</h2>
+      <p>DetoxLock은 원칙적으로 이용자의 개인정보를 제3자에게 제공하지 않습니다.</p>
+      <p>
+        다만, 아래와 같은 외부 서비스(예: 결제/오류 로그/분석 도구)를 사용하는 경우,
+        해당 서비스 제공자가 일부 정보를 처리할 수 있습니다. 이 경우 앱 내/스토어 정보에 별도로 고지합니다.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th style="width:30%">외부 서비스(예시)</th>
+            <th style="width:35%">처리 목적</th>
+            <th>처리 항목(예시)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Google Play 결제</td>
+            <td>구독/결제 처리</td>
+            <td>결제 관련 정보(구글 정책에 따름)</td>
+          </tr>
+          <tr>
+            <td>오류 로그/분석 도구(선택)</td>
+            <td>오류 분석 및 품질 개선</td>
+            <td>기기 정보, 앱 버전, 오류 로그</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="note">
+        실제로 사용하는 외부 서비스가 있다면, 위 표를 “실제 사용 항목”으로 수정하는 것을 권장합니다.
+      </div>
+    </section>
+
+    <section id="s7">
+      <h2>7. 이용자의 권리 및 행사 방법</h2>
+      <ul>
+        <li>이용자는 앱 설정에서 접근성 서비스를 해제하여 관련 기능 사용을 중지할 수 있습니다.</li>
+        <li>이용자는 앱 내 데이터 초기화 기능(제공되는 경우)을 통해 로컬 저장 정보를 삭제할 수 있습니다.</li>
+        <li>이용자는 앱 삭제를 통해 앱이 보관하던 정보 삭제를 요청할 수 있습니다(운영체제 정책에 따름).</li>
+        <li>개인정보 관련 문의는 아래 문의처로 연락할 수 있습니다.</li>
+      </ul>
+    </section>
+
+    <section id="s8">
+      <h2>8. 아동의 개인정보</h2>
+      <p>
+        DetoxLock은 아동을 포함한 모든 이용자에게 제공될 수 있습니다.
+        아동의 개인정보를 추가로 수집하는 기능을 제공하는 경우, 관련 법령 및 플랫폼 정책에 따라 필요한 고지를 이행합니다.
+      </p>
+    </section>
+
+    <section id="s9">
+      <h2>9. 보안 조치</h2>
+      <ul>
+        <li>PIN은 평문 저장을 지양하며, 해시 등 안전한 방식으로 처리합니다.</li>
+        <li>앱 설정/민감 설정은 PIN 확인을 통해 보호할 수 있습니다.</li>
+        <li>필요 시 최소 권한 원칙에 따라 권한을 요청합니다.</li>
+      </ul>
+    </section>
+
+    <section id="s10">
+      <h2>10. 문의처 및 고지 의무</h2>
+      <p>
+        개인정보 관련 문의는 아래로 연락해 주세요.
+      </p>
+      <ul>
+        <li>운영자: <strong>Siustudio</strong></li>
+        <li>이메일: <a href="mailto:support@siustudio.me">support@siustudio.me</a></li>
+      </ul>
+      <p class="note">
+        본 방침은 법령/서비스 변경에 따라 수정될 수 있으며, 중요한 변경이 있는 경우 앱/공지 등을 통해 안내합니다.
+      </p>
+    </section>
+
+    <footer>
+      <div>© <span id="y"></span> Siustudio. All rights reserved.</div>
+      <div style="margin-top:8px">
+        문서 버전: <span class="pill">v1.0</span> · 시행일: <span class="pill">2026-01-24</span>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
